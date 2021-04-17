@@ -1,0 +1,20 @@
+<div class="container" *ngIf="movies.length > 0; else loading">
+  <div class="d-flex justify-content-between align-items-center">
+    <h1 class="col-sm-3">Peliculas</h1>
+    <app-form-buscar class="col-sm-8"></app-form-buscar>
+  </div>
+  <hr class="mt-5" />
+  <app-grid-now-movies [movies]="movies"></app-grid-now-movies>
+</div>
+
+<ng-template #loading>
+  <div class="loading text-center">
+    <div class="spinner">
+      <div class="spinner-border" role="status">
+        <span class="visually-hidden">Loading...</span>
+      </div>
+      <h1>Cargando...</h1>
+    </div>
+  </div>
+</ng-template>
+

@@ -1,0 +1,23 @@
+
+<!-- Slider main container -->
+
+    <div class="swiper-season mt-4">
+      <!-- Additional required wrapper -->
+      <div class="swiper-wrapper">
+        <!-- Slides -->
+        <div
+          class="swiper-slide text-center"
+          *ngFor="let season of seasonSerie"
+        >
+          <img
+            class="img-fluid"
+            [src]="season.poster_path | img"
+            [alt]="season.title"
+          />
+          {{ season.name }}
+        </div>
+      </div>
+  
+    </div>
+  
+  

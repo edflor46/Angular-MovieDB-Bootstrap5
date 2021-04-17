@@ -1,0 +1,10 @@
+<div class="container">
+    <div class="d-flex justify-content-between align-items-center">
+        <h1>Resultados de: <small class="text-capitalize">{{busqueda}}</small></h1>
+        <button (click)="goBack()" class="btn btn-danger">Volver</button>
+    </div>
+    <hr class="mt-5">
+    <div class="row">
+        <app-grid-series [seriesEmision]="buscarSeries"></app-grid-series>
+    </div>
+</div>

@@ -1,0 +1,223 @@
+/* -------------------------------------------------------------------------- */
+/*                                    Fonts                                   */
+/* -------------------------------------------------------------------------- */
+@import url('https://fonts.googleapis.com/css2?family=Dosis&family=Libre+Franklin&family=Titillium+Web:ital,wght@0,200;0,300;0,400;1,200&display=swap');
+
+
+h1,
+h2 {
+  font-family: 'Dosis', sans-serif;
+}
+
+h3,
+h4,
+span {
+  font-family: 'Libre Franklin', sans-serif;
+}
+
+p,
+a {
+  font-family: 'Titillium Web', sans-serif;
+}
+
+
+/* -------------------------------------------------------------------------- */
+/*                                   Loading                                  */
+/* -------------------------------------------------------------------------- */
+.loading{
+  background: #0c0c0cf8;
+  height: 110%;
+  position: absolute;
+  z-index: 999999;
+  width: 100%;
+  margin-top: -125px;
+  overflow-y: hidden;
+}
+
+.spinner{
+  position: relative;
+  top: 40%;
+}
+/* -------------------------------------------------------------------------- */
+/*                                 Background                                 */
+/* -------------------------------------------------------------------------- */
+
+html,
+body {
+  position: relative;
+  height: 100%;
+}
+
+body {
+  background-image: linear-gradient(to right, #434343 0%, black 100%);
+  color: #fff !important;
+
+}
+
+
+
+hr {
+  position: relative;
+  top: -28px;
+  font-size: 15px !important;
+  z-index: 99;
+}
+
+
+
+/* -------------------------------------------------------------------------- */
+/*                                   Navbar                                   */
+/* -------------------------------------------------------------------------- */
+nav {
+  z-index: 99;
+}
+
+.menu_option {
+  font-family: 'Dosis', sans-serif;
+  font-size: 20px;
+  color: #fff !important;
+  transition: ease-in-out .4s;
+
+}
+
+.menu_option:hover {
+  color: #f01b08 !important;
+  border-bottom: 2px solid #f01b08;
+  transform: scale(1.1);
+  transition: ease-in-out .4s;
+}
+
+@media screen and (max-width: 992px) {
+  .menu_option:hover {
+    color: #f01b08 !important;
+    border-bottom: 2px solid #f01b08;
+    transform: none;
+    transition: ease-in-out .4s;
+    border-bottom: none !important;
+  }
+}
+
+.active_route {
+  color: #ff1500 !important;
+  border-bottom: 0px;
+  font-weight: bold;
+}
+
+
+/* -------------------------------------------------------------------------- */
+/*                                   Swiper                                   */
+/* -------------------------------------------------------------------------- */
+.swiper-container {
+  height: 140%;
+  width: 100%;
+  position: relative;
+  top: -321px;
+  -webkit-box-shadow: -1px 6px 14px -1px rgba(0, 35, 35, 0.67);
+  -moz-box-shadow: -1px 6px 14px -1px rgba(0, 35, 35, 0.67);
+  box-shadow: -1px 6px 14px -1px rgba(0, 35, 35, 0.67);
+}
+
+.swiper-button-prev,
+.swiper-button-next {
+  color: #fff;
+}
+
+
+.movie-description {
+  background-color: rgba(0, 0, 0, 0.3);
+  bottom: 23%;
+  padding: 5px;
+  margin: 0 20px !important;
+  position: absolute;
+  width: 90%;
+  text-align: left;
+  z-index: 999;
+}
+
+.section {
+  position: relative;
+  top: -190px;
+}
+
+/* -------------------------------------------------------------------------- */
+/*                                  Top Rated                                 */
+/* -------------------------------------------------------------------------- */
+
+.rated>span {
+  color: #f01b08;
+  font-size: 20px;
+}
+
+.section img {
+  cursor: pointer;
+  opacity: .5;
+  transition: ease-in-out .4s;
+}
+
+.section img:hover {
+  opacity: 1;
+}
+
+/* -------------------------------------------------------------------------- */
+/*                                 Last Movies                                */
+/* -------------------------------------------------------------------------- */
+
+.lates_movies {
+  top: -10px;
+  position: relative;
+}
+
+.swiper-last {
+  width: 100%;
+  overflow-x: hidden;
+}
+
+.lastMovie img {
+  cursor: pointer;
+  opacity: .5;
+}
+
+.lastMovie img:hover {
+  opacity: 1;
+}
+
+/* -------------------------------------------------------------------------- */
+/*                                  Top Rate                                  */
+/* -------------------------------------------------------------------------- */
+.title_topRate h3 {
+  font-size: 18px;
+}
+
+.img_poster {
+  border-radius: 5px;
+  cursor: pointer;
+  opacity: .7;
+  transition: ease-in-out .4s;
+}
+
+.img_poster:hover {
+  opacity: 1;
+
+}
+
+
+.swiper-cast {
+  width: 100%;
+  overflow-x: hidden !important;
+
+}
+
+/* -------------------------------------------------------------------------- */
+/*                                   Series                                   */
+/* -------------------------------------------------------------------------- */
+
+.swiper-series {
+  width: 100%;
+  overflow-x: hidden;
+}
+
+.swiper-season,
+.swiper-cast {
+  width: 100%;
+  overflow-x: hidden;
+}

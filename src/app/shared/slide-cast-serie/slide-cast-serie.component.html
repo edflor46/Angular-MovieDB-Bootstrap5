@@ -1,0 +1,19 @@
+<!-- Slider main container -->
+    <div class="swiper-cast mt-4">
+      <!-- Additional required wrapper -->
+      <div class="swiper-wrapper">
+        <!-- Slides -->
+        <div
+          class="swiper-slide text-center"
+          *ngFor="let cast of serieCast"
+        >
+          <img
+            class="img-fluid"
+            [src]="cast.profile_path | img"
+            [alt]="cast.title"
+          />
+           {{cast.name}}
+        </div>
+      </div>
+  
+    </div>

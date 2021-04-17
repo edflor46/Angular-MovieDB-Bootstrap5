@@ -1,0 +1,90 @@
+<app-slide-movie
+  class="animate__animate animate__fadeIn animate__slow"
+  *ngIf="movieSlide.length > 0; else loading"
+  [movieSlide]="movieSlide"
+></app-slide-movie>
+
+<ng-template #loading>
+  <div class="loading text-center">
+    <div class="spinner">
+      <div class="spinner-border" role="status">
+        <span class="visually-hidden">Loading...</span>
+      </div>
+      <h1>Cargando...</h1>
+    </div>
+  </div>
+</ng-template>
+
+<div class="container">
+  <section class="section">
+    <div class="row d-flex justify-content-between align-items-center">
+      <div class="col-md-6 mt-1">
+        <div class="rated">
+          <span>Encuentra tus peliculas</span>
+          <h1 class="mt-3">Top Peliculas mejores calificadas</h1>
+          <button (click)="goMoviesRate()" class="btn btn-outline-danger">
+            Ver todas
+          </button>
+        </div>
+      </div>
+
+      <div class="col-md-6 mt-3 mb-3 d-flex justify-content-evenly flex-wrap">
+        <div class="mt-3" *ngFor="let rated of movieTopRated">
+          <img
+            (click)="goMovie(rated)"
+            [src]="rated.poster_path | img"
+            width="120"
+            class="img-fluid"
+            alt=""
+          />
+        </div>
+      </div>
+    </div>
+  </section>
+  <hr />
+  <section class="lates_movies">
+    <div class="row">
+      <div class="col">
+        <div
+          class="last_header d-flex justify-content-between align-items-center"
+        >
+          <div class="title_last">
+            <h1>Ultimas peliculas</h1>
+          </div>
+
+          <div class="btn_last">
+            <button (click)="goMovies()" class="btn-danger btn-sm">
+              Ver todas
+            </button>
+          </div>
+        </div>
+
+        <div class="last_movies" *ngIf="lastMovies.length > 0">
+          <app-slide-last-movie
+            [lastMovies]="lastMovies"
+          ></app-slide-last-movie>
+        </div>
+      </div>
+    </div>
+  </section>
+  <hr />
+  <section class="series">
+    <div class="row">
+      <div class="col">
+        <div class="d-flex justify-content-between align-items-center">
+          <div class="title_last">
+            <h1>Series en emision</h1>
+          </div>
+
+          <button (click)="goSeries()" class="btn btn-danger btn-sm">
+            Ver todas
+          </button>
+        </div>
+
+        <div class="mb-4" *ngIf="seriesEmision.length > 0">
+          <app-series-slide [seriesEmision]="seriesEmision"></app-series-slide>
+        </div>
+      </div>
+    </div>
+  </section>
+</div>

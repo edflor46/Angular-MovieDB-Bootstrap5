@@ -1,0 +1,135 @@
+<div class="row container-fluid mt-2" *ngIf="serieDetails; else loading">
+  <div class="col-md-5 col-sm-5 m-2">
+    <!--IMG-->
+    <img [src]="serieDetails.poster_path | img" alt="" class="img-fluid" />
+  </div>
+
+  <div class="col-md-6 col-sm-6">
+    <!--Details-->
+    <h3>{{ serieDetails.original_name }}</h3>
+    <small class="m-2 badge-pill" *ngFor="let genero of serieDetails.genres">{{
+      genero.name
+    }}</small>
+    <h5>
+      Origen:
+      <small
+        class="mt-2"
+        *ngFor="let origen of serieDetails.production_countries"
+        >{{ origen.name }}</small
+      >
+    </h5>
+
+    <div class="row">
+      <div class="col">
+        <star-rating
+          [value]="serieDetails.vote_average"
+          checkedcolor="gold"
+          uncheckedcolor="gray"
+          size="20px"
+          totalstars="10"
+          readonly="false"
+        >
+        </star-rating>
+      </div>
+
+      <div class="col">
+        {{ serieDetails.vote_average | number: "1.1-2" }}
+      </div>
+      <div class="row mt-3">
+        <div class="col">
+          <span>
+            {{ serieDetails.overview }}
+          </span>
+        </div>
+      </div>
+
+      <div class="row mt-2">
+        <div class="col">
+          <span
+            >Primera emision:
+            <strong class="m-2">{{
+              serieDetails.first_air_date | date: "MMMM /dd /yyyy"
+            }}</strong></span
+          >
+        </div>
+      </div>
+
+      <div class="row mt-2" *ngIf="serieDetails.homepage">
+        <div class="col">
+          <span
+            >Pagina oficial:
+            <strong class="m-2"
+              ><a
+                class="text-white"
+                [href]="serieDetails.homepage"
+                target="_blank"
+                >{{ serieDetails.homepage }}</a
+              ></strong
+            ></span
+          >
+        </div>
+      </div>
+
+      <div class="row mt-2" *ngFor="let create of serieDetails.created_by">
+        <div class="col">
+          <span
+            >Creado por:
+            <strong class="m-2">{{ create.name }}</strong>
+          </span>
+        </div>
+      </div>
+
+      <div class="row mt-3">
+        <div class="col">
+          <img
+            *ngFor="let logo of production"
+            [src]="logo.logo_path | img"
+            [alt]="logo.name"
+            class="img-fluid m-1"
+            width="70"
+          />
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="row mt-4">
+    <div class="col">
+      <h3>Temporadas</h3>
+      <app-slide-season-serie
+        *ngIf="seasonSerie.length > 0"
+        class="slide_season"
+        [seasonSerie]="seasonSerie"
+      ></app-slide-season-serie>
+    </div>
+  </div>
+
+  <div class="row mt-4 mb-4">
+    <div class="col">
+      <h3>Casting</h3>
+      <app-slide-cast-serie
+        *ngIf="serieCast.length > 0"
+        class="slide_season"
+        [serieCast]="serieCast"
+      ></app-slide-cast-serie>
+    </div>
+  </div>
+
+  <div class="col mb-4">
+    <button (click)="onBack()" class="btn btn-danger">Volver</button>
+  </div>
+</div>
+
+
+
+
+<ng-template #loading>
+  <div class="loading text-center">
+    <div class="spinner">
+      <div class="spinner-border" role="status">
+        <span class="visually-hidden">Loading...</span>
+      </div>
+      <h1>Cargando...</h1>
+    </div>
+  </div>
+</ng-template>

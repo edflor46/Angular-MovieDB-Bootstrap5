@@ -1,0 +1,28 @@
+<div class="container" *ngIf="buscarNowMovies.length">
+  <div class="d-flex justify-content-between align-items-center">
+    <h1>
+      Resultados de: <small class="text-capitalize">{{ busqueda }}</small>
+    </h1>
+    <button (click)="goBack()" class="btn btn-danger">Volver</button>
+  </div>
+  <hr class="mt-5" />
+  <div class="row">
+    <app-grid-now-movies [movies]="buscarNowMovies"></app-grid-now-movies>
+  </div>
+</div>
+
+<!--No resultados-->
+
+<div class="container" *ngIf="noResultados">
+  <div class="d-flex justify-content-between align-items-center">
+    <h1>
+      No hay resultados para:
+      <small class="text-capitalize">{{ busqueda }}</small>
+    </h1>
+    <button (click)="goBack()" class="btn btn-danger">Volver</button>
+  </div>
+  <hr class="mt-5" />
+  <div class="row">
+    <app-grid-now-movies [movies]="buscarNowMovies"></app-grid-now-movies>
+  </div>
+</div>

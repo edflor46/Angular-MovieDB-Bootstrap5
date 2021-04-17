@@ -1,0 +1,11 @@
+
+<div class="col d-flex">
+  <input
+    type="search"
+    #buscar
+    (keyup.enter)="buscarPelicula(buscar.value)"
+    class="form-control form-control-sm m-1"
+    placeholder="Buscar una pelicula"
+  />
+  <button (click)="buscarPelicula(buscar.value)" class="btn btn-danger m-1">Buscar</button>
+</div>

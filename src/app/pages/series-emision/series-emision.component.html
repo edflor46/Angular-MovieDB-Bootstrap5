@@ -1,0 +1,23 @@
+<div class="container" *ngIf="seriesEmision.length > 0; else loading">
+  <div class="animate__animate animate__fadeInRightBig">
+    <div class="d-flex justify-content-between align-items-center">
+      <h1 class="col-sm-3">Series</h1>
+      <app-form-buscar-serie class="col-md-8"></app-form-buscar-serie>
+    </div>
+    <hr class="mt-5" />
+    <div>
+      <app-grid-series [seriesEmision]="seriesEmision"></app-grid-series>
+    </div>
+  </div>
+</div>
+
+<ng-template #loading>
+  <div class="loading text-center">
+    <div class="spinner">
+      <div class="spinner-border" role="status">
+        <span class="visually-hidden">Loading...</span>
+      </div>
+      <h1>Cargando...</h1>
+    </div>
+  </div>
+</ng-template>

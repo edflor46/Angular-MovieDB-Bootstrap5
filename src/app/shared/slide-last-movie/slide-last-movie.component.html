@@ -1,0 +1,23 @@
+<!-- Slider main container -->
+<div class="container">
+  <div class="swiper-last mt-4">
+    <!-- Additional required wrapper -->
+    <div class="swiper-wrapper">
+      <!-- Slides -->
+      <div
+        class="swiper-slide text-center lastMovie"
+        *ngFor="let last of lastMovies"
+      >
+        <img
+          (click)="goMovie(last)"
+          class="img-fluid"
+          [src]="last.poster_path | img"
+          [alt]="last.title"
+        />
+        {{ last.original_title }}
+      </div>
+    </div>
+
+    <div class="swiper-scrollbar"></div>
+  </div>
+</div>

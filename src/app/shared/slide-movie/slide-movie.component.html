@@ -1,0 +1,43 @@
+<!-- Slider main container -->
+<div class="swiper-container">
+  <!-- Additional required wrapper -->
+  <div class="swiper-wrapper">
+    <!-- Slides -->
+    <div
+      class="swiper-slide"
+      *ngFor="let movie of movieSlide"
+      [ngStyle]="{
+        'background-size': '100% 100%',
+        'background-repeat': 'no-repeat',
+        'background-image':
+          'url(https://image.tmdb.org/t/p/original' + movie.backdrop_path + ')',
+        opacity: '.8'
+      }"
+    >
+      <div class="movie-description">
+        <h3>{{ movie.original_title }}</h3>
+        <div class="row d-flex">
+        <star-rating
+          [value]="movie.vote_average"
+          checkedcolor="gold"
+          uncheckedcolor="gray"
+          size="20px"
+          totalstars="10"
+          readonly="false"
+        >
+        </star-rating>
+        <div>
+          <span>{{movie.vote_average | number:"1.1-2"}}</span>
+        </div>
+      </div>
+        <h3 class="mt-1">Sipnopsis:</h3>
+        <p>{{ movie.overview | slice: 0:130 }}...</p>
+        <button (click)="goMovie(movie)" class="btn btn-danger mb-1">
+          Saber mas
+        </button>
+      </div>
+    </div>
+  </div>
+  <!-- If we need pagination -->
+  <div class="swiper-pagination swiper-pagination-white"></div>
+</div>

@@ -1,0 +1,16 @@
+<div class="container" *ngIf="moviesTopRates.length > 0; else loading">
+  <h1>Peliculas mejores calificadas</h1>
+  <hr class="mt-5" />
+  <app-grid-top-rates [moviesTopRates]="moviesTopRates"></app-grid-top-rates>
+</div>
+
+<ng-template #loading>
+  <div class="loading text-center">
+    <div class="spinner">
+      <div class="spinner-border" role="status">
+        <span class="visually-hidden">Loading...</span>
+      </div>
+      <h1>Cargando...</h1>
+    </div>
+  </div>
+</ng-template>
